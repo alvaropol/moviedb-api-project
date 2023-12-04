@@ -1,0 +1,55 @@
+::ng-deep .custom-pagination .page-link {
+    color: black;
+}
+
+::ng-deep .custom-pagination .page-item.active .page-link {
+    background-color: #21242D;
+    border-color: #21242D;
+    color: white;
+}
+
+::ng-deep .custom-pagination .page-item .page-link {
+    background-color: #21242D;
+    border-color: #21242D;
+    color: white;
+}
+
+::ng-deep .custom-pagination .page-item:hover .page-link {
+    background-color: rgb(90, 90, 90);
+    border-color: rgb(90, 90, 90);
+    color: black;
+}
+
+.container {
+    background-color: #16181E;
+}
+
+input {
+    background-color: #21242D;
+    border: none;
+}
+
+input:focus {
+    background-color: #21242D;
+    color: #fff;
+}
+
+input::placeholder {
+    color: white;
+}
+
+button {
+    background-color: #21242D;
+    border: none;
+    color: white;
+}
+
+button:hover {
+    background-color: #2e313a;
+    border: none;
+    color: white;
+}
+
+button:active {
+    background-color: gray !important;
+}

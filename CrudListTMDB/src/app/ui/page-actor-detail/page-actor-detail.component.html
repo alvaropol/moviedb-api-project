@@ -1,0 +1,98 @@
+<div class="contenedor">
+    <div class="d-flex">
+        <div class="">
+            <img [src]="urlImage()" alt="" width="366px" height="549px" />
+        </div>
+        <div style="margin-left: 54px">
+            <div class="titulo">
+                <h1>
+                    {{ actor.name }}
+                </h1>
+            </div>
+            <div class="row caracteristicas mb-3">
+                <div class="col-3">
+                    <h4><em>Known for department</em></h4>
+                    <h4>
+                        <strong [textContent]="testDataKnownForDepartment(actor.known_for_department)"></strong>
+                    </h4>
+                </div>
+                <div class="col-3">
+                    <h4><em>Popularity</em></h4>
+                    <h4>
+                        <strong [textContent]="testDataPopularity(actor.popularity)"></strong>
+                    </h4>
+                </div>
+                <div class="col-3">
+                    <h4><em>Birth date</em></h4>
+                    <h4>
+                        <strong [textContent]="testDataBirthDay(actor.birthday)"></strong>
+                    </h4>
+                </div>
+                <div class="col-3">
+                    <h4><em>Place of birth</em></h4>
+                    <h4>
+                        <strong [textContent]="testDataPlaceOfBirth(actor.place_of_birth)"></strong>
+                    </h4>
+                </div>
+            </div>
+            <div>
+                <h3 class="titulo-overview">Biography:</h3>
+                <p class="cuerpo-overview" [textContent]="testDataBiography(actor.biography)"></p>
+            </div>
+        </div>
+    </div>
+    <h3 class="titulo-overview mt-3">Known for (Movies):</h3>
+    <div class="reparto list-group mt-3 list-group-horizontal position-relative overflow-auto overflow-y-hidden">
+        <div *ngFor="let m of actorMovies">
+            <div class="card">
+                <div class="card-img-overlay-smoke">
+                    <div class="tamano position-relative"
+                        [ngStyle]="{ 'background-image': 'url(' + getImageMovie(m.poster_path) + ')' }">
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background-color: rgba(0, 0, 0, 0.5);">
+                        </div>
+                        <div class="pt-4 ps-4 position-relative">
+                            <h5 class="card-title">{{m.title}}</h5>
+                        </div>
+                        <div class="d-flex flex-column align-items-end position-absolute bottom-0 end-0 p-3">
+                            <button type="button" class="btn btn-details" [routerLink]="['/movie/detail/', m.id]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 class="titulo-overview mt-3">Known for (TV Shows):</h3>
+    <div class="reparto list-group mt-3 list-group-horizontal position-relative overflow-auto overflow-y-hidden">
+        <div *ngFor="let t of actorTvShows">
+            <div class="card">
+                <div class="card-img-overlay-smoke">
+                    <div class="tamano position-relative"
+                        [ngStyle]="{ 'background-image': 'url(' + getImageMovie(t.poster_path) + ')' }">
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background-color: rgba(0, 0, 0, 0.5);">
+                        </div>
+                        <div class="pt-4 ps-4 position-relative">
+                            <h5 class="card-title">{{t.name}}</h5>
+                        </div>
+                        <div class="d-flex flex-column align-items-end position-absolute bottom-0 end-0 p-3">
+                            <button type="button" class="btn btn-details" [routerLink]="['/tv-show/detail/', t.id]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
