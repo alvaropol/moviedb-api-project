@@ -105,8 +105,7 @@ export class PageProfileComponent implements OnInit {
   }
 
   clear(listId: any) {
-    this.accountService.clearListPersonalized(listId).subscribe()
-    this.modalService.dismissAll()
+    this.accountService.clearListPersonalized(listId).subscribe();
   }
 
   deleteList(listId: any) {

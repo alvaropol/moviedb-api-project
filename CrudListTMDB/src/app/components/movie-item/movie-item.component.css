@@ -45,6 +45,18 @@
   margin: 0.75rem;
 }
 
+.btn-details2 {
+  color: white;
+  border: none;
+  background-color: rgba(249, 249, 249, 0.2);
+  bottom: 0;
+  right: 0;
+  font-size: 17px;
+  position: absolute;
+  margin: 0.75rem;
+  margin-right: 80px;
+}
+
 .rating {
   color: #00B9AE;
 }

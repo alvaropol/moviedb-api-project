@@ -143,9 +143,16 @@ export class AccountService {
     return this.http.delete<any>(`${environment.apiBaseUrl}/list/${id}?api_key=${environment.apiKey}&session_id=${localStorage.getItem("session_id")}`)
   }
 
-  clearListPersonalized(id: any): Observable<any> {
-    return this.http.post<any>(`${environment.apiBaseUrl}/list/${id}/clear?api_key=${environment.apiKey}&session_id=${localStorage.getItem("session_id")}&confirm=true`,
+  clearListPersonalized(idList: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiBaseUrl}/list/${idList}/clear?api_key=${environment.apiKey}&session_id=${localStorage.getItem("session_id")}&confirm=true`,
       {
+      });
+  }
+
+  addMovieToListPersonalized(idList: any, movieId: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiBaseUrl}/list/${idList}/add_item?api_key=${environment.apiKey}&session_id=${localStorage.getItem("session_id")}&confirm=true`,
+      {
+        "media_id": movieId
       })
   }
 }
