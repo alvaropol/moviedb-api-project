@@ -1,0 +1,57 @@
+<div class="container">
+    <h3 class="titulo-overview mt-3">Actors of the day:</h3>
+    <div class="reparto list-group mt-3 list-group-horizontal position-relative overflow-auto overflow-y-hidden">
+        <div *ngFor="let actor of listActorDay">
+            <div class="card">
+                <div class="card-img-overlay-smoke">
+                    <div class="tamano position-relative"
+                        [ngStyle]="{ 'background-image': 'url(' + getImage(actor.profile_path) + ')' }">
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background-color: rgba(0, 0, 0, 0.5);">
+                        </div>
+                        <div class="pt-4 ps-4 position-relative">
+                            <h5 class="card-title">{{ actor.name }}</h5>
+                        </div>
+                        <div class="d-flex flex-column align-items-end position-absolute bottom-0 end-0 p-3">
+                            <button type="button" class="btn btn-details" [routerLink]="['/actor/detail/', actor.id]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="titulo-overview mt-3">Actors of the week:</h3>
+    <div class="reparto list-group mt-3 list-group-horizontal position-relative overflow-auto overflow-y-hidden">
+        <div *ngFor="let actor of listActorWeek">
+            <div class="card">
+                <div class="card-img-overlay-smoke">
+                    <div class="tamano position-relative"
+                        [ngStyle]="{ 'background-image': 'url(' + getImage(actor.profile_path) + ')' }">
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background-color: rgba(0, 0, 0, 0.5);">
+                        </div>
+                        <div class="pt-4 ps-4 position-relative">
+                            <h5 class="card-title">({{ actor.name }})</h5>
+                        </div>
+                        <div class="d-flex flex-column align-items-end position-absolute bottom-0 end-0 p-3">
+                            <button type="button" class="btn btn-details" [routerLink]="['/actor/detail/', actor.id]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="d-flex align-items-center mt-2">
+    <button class="btn btnFilter btn-outline-light mb-2 me-2" *ngIf="showFilters" (click)="changeVisibility()">Ocultar
+        Filtros <i class="bi bi-eye-slash"></i></button>
+    <button class="btn btnFilter btn-outline-light mb-2 me-2" *ngIf="!showFilters" (click)="changeVisibility()">Filtrar
+        <i class="bi bi-filter"></i></button>
+    <div class="row col-10">
+        <div *ngIf="showFilters" class="d-flex flex-wrap filter-container">
+            <div *ngFor="let genre of genres; index as i">
+                <div class="filter-item">
+                    <input type="checkbox" class="btn-check" [id]="genre.name" autocomplete="off" [value]="genre.id"
+                        (change)="loadPageByGender($event)">
+                    <label class="btn btn-outline-primary" [for]="genre.name">{{genre.name}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex" style="margin-left: 34%;">
+    <ngb-pagination class="custom-pagination" [maxSize]="5" [boundaryLinks]="true" [collectionSize]="movieCount"
+        [(page)]="actualPage" [pageSize]="20" (pageChange)="loadNewPage()"
+        aria-label="Default pagination"></ngb-pagination>
+
+    <input type="text" class="form-control" style="width: 200px; height: 38px; margin-left: 190px;"
+        placeholder="Search movie" (keyup)="loadPageForName($event)">
+    <button class="btn btn-outline-primary" type="button" id="button-addon2"
+        style="margin-left: 5px; width: 100px; height: 38px;">Search</button>
+</div>
+
+<div class="container">
+    <app-movie-list class="ml-2" [list]="movieList"></app-movie-list>
+</div>

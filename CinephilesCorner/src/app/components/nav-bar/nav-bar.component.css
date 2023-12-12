@@ -1,0 +1,74 @@
+nav {
+    color: white;
+}
+
+a {
+    color: white;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #00B9AE;
+}
+
+.vertical-nav {
+    min-width: 17rem;
+    width: 20rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #21242D;
+    z-index: 1;
+    /* Asegura que el menú vertical esté por encima del menú horizontal */
+}
+
+.text-gray {
+    color: #aaa;
+}
+
+li {
+    margin-left: 15px;
+}
+
+p {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.media-body {
+    margin-left: 15px;
+}
+
+.media {
+    cursor: pointer;
+}
+
+.align-title {
+    margin-left: 10px;
+}
+
+.nav-end {
+    margin-top: auto;
+    padding-top: 350px;
+}
+
+.active {
+    color: #00B9AE;
+    border-right: 4px solid #00B9AE;
+}
+
+.inactive {
+    color: white;
+    border-right: none;
+}
+
+.navbar-top {
+    background-color: #16181E;
+    height: 100px;
+}
+
+main {
+    background-color: #16181E;
+    color: white;
+}

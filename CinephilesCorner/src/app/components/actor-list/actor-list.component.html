@@ -1,0 +1,16 @@
+<div class="d-flex" style="width: 100%; margin-left: 34%;">
+    <ngb-pagination class="custom-pagination" [maxSize]="5" [boundaryLinks]="true" [collectionSize]="10000"
+        [(page)]="currentPage" [pageSize]="20" (pageChange)="loadNewPage()"
+        aria-label="Default pagination"></ngb-pagination>
+
+    <input type="text" class="form-control" style="width: 200px; height: 38px; margin-left: 190px;"
+        placeholder="Search actor" (keyup)="loadPageForName($event)">
+    <button class="btn btn-outline-primary" type="button" id="button-addon2"
+        style="margin-left: 5px; width: 100px; height: 38px;">Search</button>
+</div>
+<div class="container">
+    <div class="row">
+        <app-actor-item class="ml-2 p-0 col-xl-3 col-lg-4 col-md-6 col-sm-6 my-2 rounded border-0"
+            *ngFor="let a of actorList" [actor]="a"></app-actor-item>
+    </div>
+</div>
