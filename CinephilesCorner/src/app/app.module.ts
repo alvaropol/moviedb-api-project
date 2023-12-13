@@ -31,6 +31,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ActorListComponent } from "./components/actor-list/actor-list.component";
 import { PageHomeComponent } from "./ui/page-home/page-home.component";
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+
 
 
 
@@ -86,12 +88,14 @@ import { PageHomeComponent } from "./ui/page-home/page-home.component";
       titleFontWeight: "600",
       titleColor: "#ffffff"
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { } import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
+import { environment } from "../environments/environment.development";
 
 
